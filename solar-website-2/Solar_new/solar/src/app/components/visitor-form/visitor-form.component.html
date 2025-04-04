@@ -1,0 +1,39 @@
+<div class="container mt-5">
+    <h3>{{ isEditMode ? 'Edit Visitor' : 'Add New Visitor' }}</h3>
+    <form [formGroup]="visitorForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Consumer Name</label>
+        <input type="text" formControlName="consumerName" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label>Consumer Number</label>
+        <input type="text" formControlName="consumerNumber" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label>Subcd Status</label>
+        <input type="text" formControlName="subcdStatus" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label>Installation Status</label>
+        <input type="text" formControlName="installationStatus" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label>Reason Not Done</label>
+        <input type="text" formControlName="reasonNotDone" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label>Queries</label>
+        <input type="text" formControlName="queries" class="form-control" />
+      </div>
+  
+      <button class="btn btn-success mt-3" type="submit">
+        {{ isEditMode ? 'Update Visitor' : 'Add Visitor' }}
+      </button>
+    </form>
+  </div>
+  

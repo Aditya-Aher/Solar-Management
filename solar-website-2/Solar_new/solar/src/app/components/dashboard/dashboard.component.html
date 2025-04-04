@@ -1,0 +1,41 @@
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+        <h5> 🌞 Solar Management System</h5>
+    </div>
+  </nav>
+<div class="p-5 mt-4">
+    <h2 class="text-center">Solar Panel</h2>
+    <button class="btn btn-primary mb-3" (click)="addVisitor()">Add New Visitor</button>
+    
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Number</th>
+          <th>Subcd Status</th>
+          <th>Installation Status</th>
+          <th>Reason Not Done</th>
+          <th>Queries</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let visitor of visitors">
+          <td>{{ visitor.id }}</td>
+          <td>{{ visitor.consumerName }}</td>
+          <td>{{ visitor.consumerNumber }}</td>
+          <td>{{ visitor.subcdStatus }}</td>
+          <td>{{ visitor.installationStatus }}</td>
+          <td>{{ visitor.reasonNotDone }}</td>
+          <td>{{ visitor.queries }}</td>
+          <td>
+            <button class="btn btn-info btn-sm" (click)="viewVisitor(visitor)">View</button>
+            <button class="btn btn-warning btn-sm mx-1" (click)="editVisitor(visitor)">Edit</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteVisitor(visitor.id!)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
